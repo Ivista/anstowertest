@@ -4,4 +4,4 @@
        register: uptime_result
        
      - debug:
-         var: culres
+         var: uptime_result
