@@ -1,7 +1,15 @@
 - hosts: all
   tasks:
-     - shell: uptime
-       register: uptime_result
-       
-     - debug:
-         var: uptime_result
+    - name: Uptime of servers
+      register: uptimeofserv
+      command: "uptime"
+
+    - debug:
+        var: uptimeofserv.stdout_lines
+
+    - name: Execute the df command
+      register: dfout
+      command: "df -h"
+
+    - debug:
+        var: dfout.stdout_lines
