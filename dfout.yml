@@ -1,0 +1,6 @@
+    - name: Execute the df command
+      register: dfout
+      command: "df -h"
+
+    - debug:
+        var: dfout.stdout_lines
