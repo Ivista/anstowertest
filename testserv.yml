@@ -1,11 +1,11 @@
 ---
 - hosts: all
   vars:
-    ansible_user: 'username'
-    ansible_password: 'password'
+    ansible_user: 'root'
+    ansible_password: 'vagrant'
 
   tasks:
     - name: Create a directory
       ansible.builtin.file:
-        path: /path/to/directory
+        path: /var/tmp/newdir1
         state: directory
