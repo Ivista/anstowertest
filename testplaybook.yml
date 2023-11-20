@@ -1,20 +1,23 @@
 - hosts: all
   tasks:
-     - shell: uptime
-       register: uptime_result
+    - name: Check uptime
+      shell: uptime
+      register: uptime_result
 
-     - name: Get current working directory
-       command: pwd
-       register: pwd_result
-    
-     - debug:
-         var: uptime_result
+    - name: Get current working directory
+      command: pwd
+      register: pwd_result
 
-     -  name: Display current working directory
-        debug:
-          var: pwd_result.stdout
+    - name: Display uptime result
+      debug:
+        var: uptime_result
 
-     - name: Clone a public GitHub repository
-       ansible.builtin.git:
-         repo: 'https://github.com/Ivista/testrepo.git'
-         version: 'main' # or any other branch or tag
+    - name: Display current working directory
+      debug:
+        var: pwd_result.stdout
+
+    - name: Clone a public GitHub repository into the current working directory
+      ansible.builtin.git:
+        repo: 'https://github.com/Ivista/testrepo.git'
+        dest: "{{ pwd_result.stdout }}/testrepo"
+        version: 'main'
