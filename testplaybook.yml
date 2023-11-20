@@ -13,3 +13,8 @@
      -  name: Display current working directory
         debug:
           var: pwd_result.stdout
+
+     - name: Clone a public GitHub repository
+       ansible.builtin.git:
+         repo: 'https://github.com/Ivista/testrepo.git'
+         version: 'main' # or any other branch or tag
