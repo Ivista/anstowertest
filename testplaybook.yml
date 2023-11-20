@@ -2,6 +2,14 @@
   tasks:
      - shell: uptime
        register: uptime_result
-       
+
+     - name: Get current working directory
+       command: pwd
+       register: pwd_result
+    
      - debug:
          var: uptime_result
+
+     -  name: Display current working directory
+        debug:
+          var: pwd_result.stdout
