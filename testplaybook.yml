@@ -20,4 +20,4 @@
       ansible.builtin.git:
         repo: 'https://github.com/Ivista/testrepo.git'
         dest: "{{ pwd_result.stdout }}/testrepo"
-        version: 'main'
+        #version: 'main'
