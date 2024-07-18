@@ -5,7 +5,7 @@
   tasks:
     - name: Check connectivity to Vault server
       uri:
-        url: http://127.0.0.1:8200/v1/sys/health
+        url: http://10.42.0.16:8200/v1/sys/health
         method: GET
         return_content: yes
       register: vault_health
