@@ -1,1 +1,16 @@
+  ---
+- name: Test connectivity to Vault server
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Check connectivity to Vault server
+      uri:
+        url: http://127.0.0.1:8200/v1/sys/health
+        method: GET
+        return_content: yes
+      register: vault_health
+
+    - name: Show Vault health status
+      debug:
+        var: vault_health
 
