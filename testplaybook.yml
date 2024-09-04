@@ -16,8 +16,16 @@
       debug:
         var: pwd_result.stdout
 
-    # - name: Clone a public GitHub repository into the current working directory
-    #   ansible.builtin.git:
-    #     repo: 'https://github.com/Ivista/testrepo.git'
-    #     dest: "{{ pwd_result.stdout }}/testrepo"
-        #version: 'main'
+    - name: Clone a public GitHub repository into the current working directory
+      ansible.builtin.git:
+        repo: 'https://github.com/Ivista/testrepo.git'
+        dest: "{{ pwd_result.stdout }}/testrepo"
+        version: 'main'
+
+    - name: List files and folders in the cloned repository
+      command: ls -la "{{ pwd_result.stdout }}/testrepo"
+      register: repo_contents
+
+    - name: Display contents of the repository
+      debug:
+        var: repo_contents.stdout
