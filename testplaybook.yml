@@ -30,13 +30,14 @@
       debug:
         var: repo_contents.stdout
 
-    - name: List contents of a directory
-      hosts: localhost
-      tasks:
-        - name: Run the 'ls' command
-          command: ls -la /home/vagrant
-          register: dir_output
-    
-        - name: Print directory contents
-          debug:
-            var: dir_output.stdout_lines
+# A new play for listing the contents of a directory on localhost
+- hosts: localhost
+  tasks:
+    - name: Run the 'ls' command
+      command: ls -la /home/vagrant
+      register: dir_output
+
+    - name: Print directory contents
+      debug:
+        var: dir_output.stdout_lines
+
