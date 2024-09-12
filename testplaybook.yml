@@ -31,13 +31,10 @@
         var: repo_contents.stdout
 
 # A new play for listing the contents of a directory on localhost
-- hosts: vagrant ansible tower serv
-  remote_user: vagrant
-  become: yes
-  become_user: root
-  become_method: su
+- hosts: vagrant ansible tower serv  # Use your inventory name
+  remote_user: root  # Connect directly as root
   vars:
-    ansible_become_pass: vagrant  # Root password is set here (Not recommended for security reasons)
+    ansible_password: vagrant  # Set the root password directly here
   tasks:
     - name: List the contents of /root directory as root
       command: ls -la /root
