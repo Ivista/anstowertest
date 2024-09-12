@@ -34,7 +34,7 @@
 - hosts: localhost
   tasks:
     - name: Run the 'ls' command
-      command: ls -la /home/vagrant
+      command: ls -la /tmp
       register: dir_output
 
     - name: Print directory contents
