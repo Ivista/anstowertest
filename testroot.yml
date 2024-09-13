@@ -20,4 +20,10 @@
       debug:
         var: dir_contents.stdout_lines
 
+    -name: clean up 
+      shell: /bin/rm -rf "[[project_folder]]"/extracted_data/*
+      register: cleanup_result
+
+      -debug:
+        var: cleanup_result
 
