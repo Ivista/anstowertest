@@ -26,6 +26,7 @@
       
     - debug:
         var: cleanup_result.stdout_lines
+        msg: "Clean up done: {{cleanup_result.stdout}}"
 
     - name: upate local repo git pull only
       command:
