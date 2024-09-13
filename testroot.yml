@@ -24,9 +24,11 @@
       shell: /bin/rm -rf "{{project_folder}}"/extracted_data/*
       register: cleanup_result
       
-    - debug:
-        var: cleanup_result.stdout_lines
-        msg: "Clean up done: {{cleanup_result.stdout}}"
+
+    - name: Display the clean up result
+      debug:
+        msg: "Clean up result is: {{cleanup_result.stdout}}"
+
 
     - name: upate local repo git pull only
       command:
