@@ -1,0 +1,12 @@
+- hosts: vagrant ansible tower serv  # Use your inventory name in Ansible Tower
+  remote_user: root  # Connect directly as root
+  vars:
+    ansible_password: vagrant  # Set the root password directly here if needed
+  tasks:
+    - name: Check uptime as root
+      command: uptime
+      register: uptime_result
+
+    - name: Display the uptime result
+      debug:
+        var: uptime_result.stdout
