@@ -1,4 +1,4 @@
-- hosts: "vagrant ansible tower serv"  # Use your inventory name in Ansible Tower
+- hosts: vagranserv  # Use your inventory name in Ansible Tower
   remote_user: root  # Connect directly as root
   vars:
     ansible_password: vagrant  # Set the root password directly here if needed
