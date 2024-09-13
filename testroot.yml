@@ -25,7 +25,7 @@
       register: cleanup_result
       
     - debug:
-        var: cleanup_result
+        var: cleanup_result.stdout_lines
 
     - name: upate local repo git pull only
       command:
