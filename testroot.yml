@@ -31,7 +31,7 @@
       command:
         chdir: "{{project_folder}}"
         cmd: git pull
-        register: gitpullrepo
+      register: gitpullrepo
 
     - debug:
         var: gitpullrepo
