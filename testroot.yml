@@ -36,6 +36,7 @@
         cmd: git pull
       register: gitpullrepo
 
-    - debug:
-        var: gitpullrepo.stdout_lines
+    - name: Display the git pull result
+      debug:
+        msg: "Git pull results are: {{gitpullrepo.stdout}}"
 
