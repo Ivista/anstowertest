@@ -10,3 +10,11 @@
     - name: Display the uptime result
       debug:
         var: uptime_result.stdout
+
+    - name: List the contents of /root directory as root
+      command: ls -la /root  # Lists the contents of /root directory
+      register: dir_contents
+
+    - name: Display the contents of the /root directory
+      debug:
+        var: dir_contents.stdout_lines
