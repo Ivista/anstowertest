@@ -23,6 +23,7 @@
     - name: clean up 
       shell: /bin/rm -rf "[[project_folder]]"/extracted_data/*
       register: cleanup_result
-      debug:
+      
+    - debug:
         var: cleanup_result
 
