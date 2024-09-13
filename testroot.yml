@@ -34,5 +34,5 @@
       register: gitpullrepo
 
     - debug:
-        var: gitpullrepo
+        var: gitpullrepo.stdout_lines
 
