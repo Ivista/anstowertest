@@ -21,7 +21,7 @@
         var: dir_contents.stdout_lines
 
     - name: clean up 
-      shell: /bin/rm -rf "[[project_folder]]"/extracted_data/*
+      shell: /bin/rm -rf "{{project_folder}}"/extracted_data/*
       register: cleanup_result
       
     - debug:
