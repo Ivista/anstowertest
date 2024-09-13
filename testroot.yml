@@ -2,6 +2,7 @@
   remote_user: root  # Connect directly as root
   vars:
     ansible_password: vagrant  # Set the root password directly here if needed
+    project_folder: /home/vagrant/work/anstowertest
   tasks:
     - name: Check uptime as root
       command: uptime
@@ -18,3 +19,5 @@
     - name: Display the contents of the /root directory
       debug:
         var: dir_contents.stdout_lines
+
+
