@@ -51,3 +51,8 @@
         msg: "check which file changed result is {{checkfilechanged.stdout}}"
 
         
+    - name: Display the commit id
+      debug:
+        msg: "The commit id is: {{commit_id.stdout}}"
+
+        
