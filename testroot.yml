@@ -40,3 +40,14 @@
       debug:
         msg: "Git pull results are: {{gitpullrepo.stdout}}"
 
+    - name: Check which file changed
+      command:
+        chdir: "{{project_folder}}"
+        cmd: python3 ./library/check-file-changed-testing3.py
+      register: checkfilechanged
+
+      - name: Display check which file changed result
+        debug:
+          msg: "check which file changed restult is {{checkfilechanged.stdout}}"
+
+        
