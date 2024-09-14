@@ -30,7 +30,7 @@
         msg: "Clean up result is: {{cleanup_result.stdout}}"
 
 
-    - name: upate local repo git pull only
+    - name: update local repo git pull only
       command:
         chdir: "{{project_folder}}"
         cmd: git pull
@@ -46,8 +46,8 @@
         cmd: python3 ./library/check-file-changed-testing3.py
       register: checkfilechanged
 
-      - name: Display check which file changed result
-        debug:
-          msg: "check which file changed restult is {{checkfilechanged.stdout}}"
+    - name: Display check which file changed result
+      debug:
+        msg: "check which file changed result is {{checkfilechanged.stdout}}"
 
         
