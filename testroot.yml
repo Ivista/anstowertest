@@ -53,6 +53,6 @@
         
     - name: Display the commit id
       debug:
-        msg: "The commit id is: {{commit_id.stdout}}"
+        msg: "The commit id is: {{commit_id}}"
 
         
