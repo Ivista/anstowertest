@@ -55,4 +55,12 @@
       debug:
         msg: "The commit id is: {{commit_id}}"
 
+    - name: Display the environment
+      debug:
+        msg: "the environment is: {{environment}}"
+
+    - name: Display the version
+      debug:
+        msg: "The version is: {{version}}"
+
         
