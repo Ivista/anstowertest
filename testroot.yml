@@ -57,7 +57,7 @@
 
     - name: Display the environment
       debug:
-        msg: "the environment is: {{environment}}"
+        msg: "the environment is: {{app_environment}}"
 
     - name: Display the version
       debug:
